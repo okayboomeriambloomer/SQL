@@ -1,0 +1,4 @@
+SELECT product.model, printer.price
+FROM product INNER JOIN printer ON product.model = printer.model
+WHERE price IN (SELECT MAX(price)
+		FROM printer)

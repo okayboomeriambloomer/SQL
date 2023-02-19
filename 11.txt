@@ -1,0 +1,2 @@
+SELECT AVG(speed) AS Средняя_скорость_ПК
+FROM pc

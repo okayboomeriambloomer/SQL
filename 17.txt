@@ -1,0 +1,9 @@
+SELECT DISTINCT type, product.model, speed
+FROM product INNER JOIN laptop ON product.model = laptop.model
+WHERE speed < ALL (SELECT speed FROM pc)
+			
+-- ИЛИ --
+
+SELECT DISTINCT type, product.model, speed
+FROM product INNER JOIN laptop ON product.model = laptop.model
+WHERE speed < (SELECT MIN(speed) FROM pc)

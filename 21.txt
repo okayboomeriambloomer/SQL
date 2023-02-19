@@ -1,0 +1,4 @@
+SELECT maker, MAX(price)
+FROM product
+WHERE type = 'PC'
+GROUP BY maker
