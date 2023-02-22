@@ -9,3 +9,17 @@ UNION
 SELECT product.model, price
 FROM product INNER JOIN laptop ON product.model = laptop.model
 WHERE maker = 'B'
+
+-- ИЛИ --
+
+SELECT a.model, price
+FROM (SELECT model, price
+	FROM pc
+	UNION
+	SELECT model, price
+	FROM printer
+	UNION
+	SELECT model, price
+	FROM laptop
+	) AS a INNER JOIN product ON product.model = a.model
+WHERE maker = 'B'
